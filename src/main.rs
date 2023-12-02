@@ -2,12 +2,12 @@
 //
 // wrm is a file deletion utility.
 mod actions;
-mod path;
 mod argparse;
 mod file_list;
+mod path;
 mod test;
 
-use crate::{path::WrmPath, argparse::argparse, file_list::FileList};
+use crate::{argparse::argparse, file_list::FileList, path::WrmPath};
 use filey::{self, create, Error::FileyError, FileTypes, Filey};
 use std::process::exit;
 

@@ -1,6 +1,6 @@
 use crate::{
-    path::WrmPath,
     file_list::{FileInfo, FileList},
+    path::WrmPath,
     Error::WrmError,
     Result,
 };
