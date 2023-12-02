@@ -48,6 +48,10 @@ fn prepare(wrm_path: &WrmPath) -> filey::Result<()> {
 #[error(transparent)]
 pub enum Error {
     WrmError(anyhow::Error),
+    #[error("'{}' No such file or directory", path)]
+    NotFound {
+        path: String,
+    },
 }
 
 pub type Result<T> = std::result::Result<T, Error>;
