@@ -1,4 +1,7 @@
 # Wrm - A file deletion utility
+
+![example](.images/example1.png)
+
 ## Features
 - File will be moved to trash (`$HOME/.config/wrm/trash`) by default if you do not use the option `--delete`.
 - Prompt before every actions.
