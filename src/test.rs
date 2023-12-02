@@ -1,7 +1,7 @@
 #[cfg(test)]
 mod tests {
     use crate::{
-        actions::{check, clean, delete, remove, restore},
+        actions::{clean, delete, remove, restore},
         FileList, WrmPath,
     };
     use filey::{catenate, create, remove, FileTypes, Filey};
@@ -29,8 +29,7 @@ mod tests {
         assert_eq!(Path::new(&f).exists(), false);
         assert_eq!(tf.path().exists(), true);
         println!("{}", catenate!(wrm_path.list()));
-        delete(vec![d.to_string()], true, false).unwrap();
-        check(&wrm_path).unwrap();
+        delete(vec![d.to_string()], &wrm_path, true, false).unwrap();
         assert_eq!(Path::new(&d).exists(), false);
         restore(vec![tf.to_string()], &wrm_path, true, false).unwrap();
         assert_eq!(tf.path().exists(), false);

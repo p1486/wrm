@@ -54,10 +54,10 @@ pub fn remove(
             .absolutized()
             .map_err(|e| e.into())
             .map_err(WrmError)?;
-        let file_type = p.file_type().map_err(|e| e.into()).map_err(WrmError)?;
+        let file_type = p.file_type().unwrap_or(FileTypes::File);
         let fileinfo = FileInfo::new(p.path())?;
         let remove_closure = || -> Result<()> {
-            if p.file_type().map_err(|e| e.into()).map_err(WrmError)? == FileTypes::Symlink {
+            if let FileTypes::Symlink = file_type {
                 p.remove().map_err(|e| e.into()).map_err(WrmError)?;
             } else {
                 p.move_to(wrm_path.trash())
@@ -119,7 +119,7 @@ pub fn delete(
             .absolutized()
             .map_err(|e| e.into())
             .map_err(WrmError)?;
-        let file_type = p.file_type().map_err(|e| e.into()).map_err(WrmError)?;
+        let file_type = p.file_type().unwrap_or(FileTypes::File);
         let delete_closure = || -> Result<()> {
             p.remove().map_err(|e| e.into()).map_err(WrmError)?;
             if !concise {
@@ -157,7 +157,7 @@ pub fn restore(
                     .absolutized()
                     .map_err(|e| e.into())
                     .map_err(WrmError)?;
-                let file_type = o.file_type().map_err(|e| e.into()).map_err(WrmError)?;
+                let file_type = o.file_type().unwrap_or(FileTypes::File);
                 if o.path() == p.path() {
                     o.move_to(q.path())
                         .map_err(|e| e.into())
@@ -179,7 +179,7 @@ pub fn restore(
         let message = format!(
             "{} {} '{}'? [y/N] ",
             "Restore".red().bold(),
-            &p.file_type().map_err(|e| e.into()).map_err(WrmError)?,
+            &p.file_type().unwrap_or(FileTypes::File),
             &p
         );
         call(restore_closure, message, noninteractive)?;
@@ -197,7 +197,7 @@ pub fn list(wrm_path: &WrmPath) -> Result<()> {
         for i in filelist.files() {
             let p = Filey::new(&i.path_trash());
             let file_name = p.file_name().unwrap_or_else(|| p.to_string());
-            match p.file_type().map_err(|e| e.into()).map_err(WrmError)? {
+            match p.file_type().unwrap_or(FileTypes::File) {
                 FileTypes::File => {
                     println!("{} ({}) {}", file_name, i.path(), FileTypes::File);
                 }

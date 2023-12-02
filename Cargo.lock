@@ -179,9 +179,9 @@ dependencies = [
 
 [[package]]
 name = "filey"
-version = "0.3.3"
+version = "0.3.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "90a279a2553679755f06b2d607846e13e241cf2177ddd2d50d40308c45b8cfcd"
+checksum = "06db3767f6374fb57165f54336ec57120bfd558fb50d390011bb0b3d88966294"
 dependencies = [
  "anyhow",
  "path-absolutize",
