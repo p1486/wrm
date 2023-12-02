@@ -1,6 +1,10 @@
 [package]
 name = "wrm"
 version = "0.1.0"
+authors = ["p1486 xzstd099@protonmail.com"]
+description = "A file delition utility."
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/p1486/wrm"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html

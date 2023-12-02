@@ -1,6 +1,6 @@
 # Wrm - A file deletion utility
 ## Features
-- File will be moved to trash ('$HOME/.config/wrm/trash') by default if you do not use the option '--delete'.
+- File will be moved to trash (`$HOME/.config/wrm/trash`) by default if you do not use the option `--delete`.
 - Prompt before every actions.
 - Explain what is being done.
 
@@ -31,8 +31,8 @@ wrm --clean
 ```
 
 ### Options
-- '-n', '--noninteractive' - Do not prompt before an action.
-- '-q', '--quiet' - Do not print log messages.
+- `-n`, `--noninteractive` - Do not prompt before an action.
+- `-q`, `--quiet` - Do not print log messages.
 
 ## License
 This project is licensed under the MIT License and the Apache-2.0.
