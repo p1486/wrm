@@ -1,4 +1,4 @@
-# Wrm - A file deletion utility
+# Wrm - A file deletion utility for Unix like operating systems
 
 ![example](./images/example1.png)
 
@@ -6,6 +6,13 @@
 - File will be moved to trash (`$HOME/.config/wrm/trash`) by default if you do not use the option `--delete`.
 - Prompt before every actions.
 - Explain what is being done.
+
+## Installation
+Run the following Cargo command:
+```
+cargo install wrm
+```
+Or download prebuilt binary from the [GitHub release page](https://github.com/p1486/wrm/releases)
 
 ## Usage
 To move files to trash:
@@ -15,7 +22,7 @@ wrm foo bar ...
 
 To delete files:
 ```
-wrm --delete foo bar...
+wrm --delete foo bar ...
 ```
 
 To restore files in trash to where they came from:
