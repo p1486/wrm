@@ -1,6 +1,6 @@
 [package]
 name = "wrm"
-version = "0.1.1"
+version = "0.1.2"
 authors = ["p1486 xzstd099@protonmail.com"]
 description = "A file delition utility."
 license = "MIT OR Apache-2.0"
@@ -13,7 +13,7 @@ edition = "2021"
 anyhow = { version = "1.0.75", features = ["backtrace", "std"] }
 clap = { version = "4.4.8", features = ["derive"] }
 colored = "2.0.4"
-filey = "0.3.6"
+filey = "0.3.9"
 serde = { version = "1.0.193", features = ["derive"] }
 serde_json = "1.0.108"
 thiserror = "1.0.50"

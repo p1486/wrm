@@ -179,9 +179,9 @@ dependencies = [
 
 [[package]]
 name = "filey"
-version = "0.3.6"
+version = "0.3.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "06db3767f6374fb57165f54336ec57120bfd558fb50d390011bb0b3d88966294"
+checksum = "882f7886faea984f4fe48af94a3ca9017cd62e66206a0f266d884843664411b2"
 dependencies = [
  "anyhow",
  "path-absolutize",
@@ -481,7 +481,7 @@ checksum = "ed94fce61571a4006852b7389a063ab983c02eb1bb37b47f8272ce92d06d9538"
 
 [[package]]
 name = "wrm"
-version = "0.1.1"
+version = "0.1.2"
 dependencies = [
  "anyhow",
  "clap",
