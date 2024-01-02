@@ -2,7 +2,7 @@
 name = "wrm"
 version = "0.1.3"
 authors = ["p1486 xzstd099@protonmail.com"]
-description = "A file delition utility."
+description = "A file deletion utility."
 license = "MIT OR Apache-2.0"
 repository = "https://github.com/p1486/wrm"
 edition = "2021"
